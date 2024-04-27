@@ -11,7 +11,7 @@ public class Store {
 
     private ArrayList<Employee> paidEmployees;
 
-    private static int SALARY_AMOUNT = 1400;
+    private static final int SALARY_AMOUNT = 1400;
 
     public Store(Account account, String name, Employee firstEmployee, Employee secondEmployee) {
         this.account = account;
