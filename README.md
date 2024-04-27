@@ -19,4 +19,4 @@
 - A tarefa dos Employees é verificar se sua conta recebeu o pagamento, caso sim, transferir 20% para a conta de investimentos.
 - Após todos os clientes ficarem com balanço 0, o banco será informado que as transações finalizaram e os Employees podem encerrar suas tarefas.
 - Nem todos os Employees receberão seu salário.
-- O montante do saldo de todas as contas do sistema é 5000 (1000 por cliente).
+- A soma do saldo de todas as contas do sistema é 5000 (1000 por cliente).
