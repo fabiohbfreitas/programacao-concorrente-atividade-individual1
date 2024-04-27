@@ -22,8 +22,8 @@ public class Store {
         secondEmployee.start();
     }
 
-    public void buy(Account from, int amount) {
-        account.bank.transferMoney(from, this.account, amount);
+    public void buy(Client from, int amount) {
+        account.bank.transferMoney(from.account, this.account, amount);
         if (account.getBalance() >= 1400) {
             payEmployees();
         }
@@ -37,5 +37,9 @@ public class Store {
             account.bank.transferMoney(account, firstEmployee.account, 1400);
             paidEmployees.add(firstEmployee);
         }
+    }
+
+    public void printAccountInfo() {
+        System.out.println(this.name + " has " + this.account.getBalance() + " on account balance.");
     }
 }

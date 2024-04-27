@@ -23,13 +23,17 @@ public class Client extends Thread {
             if (account.getBalance() < amount) {
                 continue;
             }
-            System.out.println(this.name + " | will buy from store"+ store.name +" -> " + amount);
-            store.buy(account, amount);
+            store.buy(this, amount);
+            System.out.println(this.name + " | bought from "+ store.name +" costing " + amount);
             try {
                 Thread.sleep(500 + ThreadLocalRandom.current().nextInt(500));
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
         }
+    }
+
+    public void printAccountInfo() {
+        System.out.println(this.name + " has " + account.getBalance() + " on account balance.");
     }
 }
