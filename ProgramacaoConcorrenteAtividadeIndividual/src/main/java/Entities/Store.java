@@ -11,6 +11,8 @@ public class Store {
 
     private ArrayList<Employee> paidEmployees;
 
+    private static int SALARY_AMOUNT = 1400;
+
     public Store(Account account, String name, Employee firstEmployee, Employee secondEmployee) {
         this.account = account;
         this.name = name;
@@ -24,7 +26,7 @@ public class Store {
 
     public void buy(Client from, int amount) {
         account.bank.transferMoney(from.account, this.account, amount);
-        if (account.getBalance() >= 1400) {
+        if (account.getBalance() >= SALARY_AMOUNT) {
             payEmployees();
         }
     }
@@ -32,9 +34,9 @@ public class Store {
     private void payEmployees() {
         if (paidEmployees.size() == 2) return;
         if (paidEmployees.contains(firstEmployee)) {
-            account.bank.transferMoney(account, secondEmployee.account, 1400);
+            account.bank.transferMoney(account, secondEmployee.account, SALARY_AMOUNT);
         } else {
-            account.bank.transferMoney(account, firstEmployee.account, 1400);
+            account.bank.transferMoney(account, firstEmployee.account, SALARY_AMOUNT);
             paidEmployees.add(firstEmployee);
         }
     }

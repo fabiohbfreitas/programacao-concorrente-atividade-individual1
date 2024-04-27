@@ -41,7 +41,7 @@ public class Main {
         /*
         Since employees do polling to transfer money into investments account and with the current amount of money
         available (5 clients * 1000) not every employee will get paid, this flag signalize that all the clients stopped
-        buying and hanging threads (Employees) must finish its work even when they did not get paid.
+        buying and the Employee thread must finish its work even when they did not get paid.
          */
         bank.finishedAllTransactions.set(true);
 
